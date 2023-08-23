@@ -1,3 +1,9 @@
+spring:
+  application:
+    name: mensaje
+  profiles:
+    active: dev,mysql
+
 server:
   port: 8082
 message: "Hola mundo!"

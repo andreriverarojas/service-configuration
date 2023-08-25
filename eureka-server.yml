@@ -1,8 +1,7 @@
 spring:
   application:
     name: eureka
-  #profiles:
-    #active: dev
+
 server:
   port: 8761
 
@@ -12,5 +11,5 @@ eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
-    service-url:
-      defaultZone: http://localhost:${server.port}/eureka/
+    #service-url:
+      #defaultZone: http://localhost:${server.port}/eureka/

@@ -2,6 +2,18 @@ server:
   port: 8082
 message: "Prueba de mensaje desde repositorio GIT por el puerto 8082"
 
+resilience4j:
+  circuit breaker:
+    configs:
+      defecto:
+        sliding-windows-size: 6
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 4
+    instances:
+      read:
+        base-config: defecto
+
 eureka:
   client:
     serviceUrl:

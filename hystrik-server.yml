@@ -2,7 +2,7 @@
 ---
 # Puerto de entorno de desarrollo generado por Eureka
 server:
-  port: 8092
+  port: 8999
 spring:
   profiles:
     active: dev

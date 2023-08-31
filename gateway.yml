@@ -1,0 +1,58 @@
+spring:
+  profiles:
+    active: dev
+    
+---
+server:
+  port: 8080
+
+spring:
+  profiles: dev
+  application:
+    name: gateway  
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: clientsModule
+        uri: lb://CLIENT-SERVICE
+        predicates:
+        - Path=/clients/**
+
+info:
+  app:
+    version: 1.0.0
+    name: Gateway
+    description: Centralizes and routes all requests from the outside to each microservice
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    instance:
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    healthcheck:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - mappings
+          - env
+          - health
+          - info
+          - hystrix.stream

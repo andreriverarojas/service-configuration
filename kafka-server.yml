@@ -1,0 +1,40 @@
+server:
+  port: 8877
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: kafka-server
+  json:
+    use:
+      type:
+        headers: false
+  kafka:
+    topic: user-details-topic
+    topic.group.id: user-details
+    consumer:
+      bootstrap-servers: kafka
+      group-id: ${spring.kafka.topic.group.id}
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring.json.trusted.packages: com.java.techhub.kafka.demo.model
+        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+        spring.deserializer.value.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+      client-id: consumer-${random.uuid}
+
+
+
+    producer:
+      bootstrap-servers: kafka
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      client-id: producer-${random.uuid}
+      properties:
+        spring:
+          json:
+            add:
+              type:
+                headers: false

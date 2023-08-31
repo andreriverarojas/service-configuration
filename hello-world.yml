@@ -1,0 +1,45 @@
+spring:
+  profiles:
+    active: dev
+
+---
+# Puerto de entorno de desarrollo generado por Eureka
+server:
+  port: 8011
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://serveo.net:8761/eureka
+    instance:
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    prefer-same-zone-eureka: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+            - mappings
+            - env
+            - health
+            - info
+            - hystrix.stream
+  info:
+    env:
+      enabled: true
+  health:
+    enabled: true
+    show-details: always
+
+info:
+  app:
+    version: 1.0.0
+    name: Microservices HelloWorld
+    description: Microservices to test Zipkin
+
+spring:
+  application:
+    zipkin: http://localhost:9411

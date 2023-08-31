@@ -4,8 +4,10 @@ spring:
     name: hystrik-server
   profiles:
     active: dev
+
 server:
   port: 8999
+
 eureka:
   client:
     fetch-registry: true

@@ -1,5 +1,7 @@
 # Puerto de entorno de desarrollo generado por Eureka
 spring:
+  application:
+    name: hystrik-server
   profiles:
     active: dev
 server:

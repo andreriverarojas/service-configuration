@@ -34,7 +34,7 @@ resilience4j:
   timelimiter:
     configs:
       defecto:
-        timeout-duration: 6s
+        timeout-duration: 2s
     instances:
       read:
         base-config: defecto

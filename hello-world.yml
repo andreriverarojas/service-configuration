@@ -20,24 +20,19 @@ eureka:
 
 resilience4j:
   circuitbreaker:
-    configs:
-      defecto:
-        sliding-windows-size: 5
-        failure-rate-threshold: 50
-        wait-duration-in-open-state: 10s
-        permitted-number-of-calls-in-half-open-state: 3
-        #slow-call-rate-threshold: 50
-        #slow-call-duration-threshold: 2s
     instances:
       myCircuitBreaker:
-        base-config: defecto
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 5
+        minimum-number-of-calls: 5
+        permitted-number-of-calls-in-half-open-state: 3
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 60000
+        automatic-transition-from-open-to-half-open-enabled: true
   timelimiter:
-    configs:
-      defecto:
-        timeout-duration: 1s
     instances:
       myTimeLimiter:
-        base-config: defecto
+        timeout-duration: 1000
 
 management:
   endpoints:

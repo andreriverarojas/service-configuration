@@ -19,7 +19,7 @@ eureka:
     prefer-same-zone-eureka: false
 
 resilience4j:
-  circuit breaker:
+  circuitbreaker:
     configs:
       defecto:
         sliding-windows-size: 6

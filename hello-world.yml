@@ -17,6 +17,19 @@ eureka:
     instance:
       instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     prefer-same-zone-eureka: false
+
+resilience4j:
+  circuit breaker:
+    configs:
+      defecto:
+        sliding-windows-size: 6
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 4
+    instances:
+      read:
+        base-config: defecto
+
 management:
   endpoints:
     web:

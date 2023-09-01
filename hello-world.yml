@@ -19,7 +19,7 @@ eureka:
     prefer-same-zone-eureka: false
 
 resilience4j:
-  circuit-breaker:
+  circuitbreaker:
     configs:
       defecto:
         sliding-windows-size: 6
@@ -31,7 +31,7 @@ resilience4j:
     instances:
       read:
         base-config: defecto
-  time-limiter:
+  timelimiter:
     configs:
       defecto:
         timeout-duration: 2s

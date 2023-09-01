@@ -29,14 +29,14 @@ resilience4j:
         slow-call-rate-threshold: 50
         slow-call-duration-threshold: 2s
     instances:
-      read:
+      myCircuitBreaker:
         base-config: defecto
   timelimiter:
     configs:
       defecto:
         timeout-duration: 2s
     instances:
-      read:
+      myTimeLimiter:
         base-config: defecto
 
 management:

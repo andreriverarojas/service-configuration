@@ -8,7 +8,7 @@ spring:
 # Puerto de entorno de desarrollo generado por Eureka
 server:
   port: 8011
-messages: "hola mundo!!"
+message: "hola mundo!!"
 eureka:
   instance:
     hostname: localhost

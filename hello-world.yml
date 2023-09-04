@@ -39,7 +39,7 @@ resilience4j:
   timelimiter:
     instances:
       item:
-        timeout-duration: 2s
+        timeout-duration: 1s
 
 management:
   endpoints:

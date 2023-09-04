@@ -36,10 +36,10 @@ resilience4j:
     instances:
       item:
         base-config: default
-    timelimiter:
-      instances:
-        item:
-          timeout-duration: 1s
+  timelimiter:
+    instances:
+      item:
+        timeout-duration: 1s
 
 management:
   endpoints:

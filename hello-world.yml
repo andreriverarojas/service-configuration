@@ -8,6 +8,7 @@ spring:
 # Puerto de entorno de desarrollo generado por Eureka
 server:
   port: 8011
+message: "hola mundo!!"
 eureka:
   instance:
     hostname: localhost
@@ -34,7 +35,7 @@ resilience4j:
         eventConsumerBufferSize: 10
     instances:
       item:
-        config-base: default
+        base-config: default
     timelimiter:
       instances:
         myTimeLimiter:
@@ -59,4 +60,3 @@ spring:
   application:
     zipkin: http://localhost:9411
 
-message: "hola mundo!!"

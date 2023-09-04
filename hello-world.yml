@@ -38,7 +38,7 @@ resilience4j:
         base-config: default
     timelimiter:
       instances:
-        myTimeLimiter:
+        item:
           timeout-duration: 1s
 
 management:

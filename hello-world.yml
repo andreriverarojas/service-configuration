@@ -46,10 +46,9 @@ management:
     web:
       exposure:
         include: '*'
-  health:
-    show-details: always
-    circuitbreakers:
-      enabled: true
+    health:
+      show-details: always
+  health.circuitbreakers.enabled: true
 
 info:
   app:

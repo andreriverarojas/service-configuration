@@ -3,7 +3,7 @@ spring:
     active: dev
   jackson:
     serialization:
-      indent_output: true
+      indent_output: false
 ---
 # Puerto de entorno de desarrollo generado por Eureka
 server:

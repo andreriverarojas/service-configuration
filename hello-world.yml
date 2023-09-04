@@ -26,7 +26,7 @@ resilience4j:
     configs:
       default:
         registerHealthIndicator: true
-        slidingWindowSize: 10
+        slidingWindowSize: 5
         #minimumNumberOfCalls: 2
         permittedNumberOfCallsInHalfOpenState: 5
         automaticTransitionFromOpenToHalfOpenEnabled: true

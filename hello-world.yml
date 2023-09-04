@@ -67,3 +67,5 @@ info:
 spring:
   application:
     zipkin: http://localhost:9411
+
+message: "hola mundo!!"

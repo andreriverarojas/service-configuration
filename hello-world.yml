@@ -46,9 +46,9 @@ management:
   endpoint:
     health:
       show-details: always
-    #health:
-      circuitbreakers:
-        enabled: true
+  health:
+    circuitbreakers:
+      enabled: true
 
 info:
   app:

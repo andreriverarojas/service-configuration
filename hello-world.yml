@@ -1,9 +1,9 @@
 spring:
   profiles:
     active: dev
-  jackson:
-    serialization:
-      indent_output: false
+  #jackson:
+    #serialization:
+      #indent_output: false
 ---
 # Puerto de entorno de desarrollo generado por Eureka
 server:

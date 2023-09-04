@@ -50,9 +50,7 @@ management:
   endpoint:
     health:
       show-details: always
-    circuitbreakers:
-      enabled: true
-
+  health.circuitbreakers.enabled: true
 
 info:
   app:

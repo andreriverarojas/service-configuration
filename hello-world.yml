@@ -6,17 +6,11 @@ spring:
 server:
   port: 8011
 message: "hola mundo!!"
+
 eureka:
-  instance:
-    hostname: localhost
   client:
-    fetch-registry: false
-    register-with-eureka: false
-    service-url:
+    serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-    instance:
-      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    prefer-same-zone-eureka: false
 
 resilience4j:
   circuitbreaker:
